@@ -21,7 +21,7 @@
              embedded
              arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
         
-        <a-camera gps-camera="maxDistance: 10; gpsTimeInterval: 1000; gpsMinDistance: 5;" 
+        <a-camera gps-camera="minDistance:5; maxDistance: 10; gpsTimeInterval: 1000; gpsMinDistance: 5;" 
                   arjs-look-controls='smoothingFactor: 0.1'
                   rotation-reader></a-camera>
     </a-scene>
