@@ -22,20 +22,20 @@ function staticLoadPlaces() {
         //        lng: -6.176597,
         //    },
         //},
-        //{
-        //    name: 'Home',
-        //    location: {
-        //        lat: 53.299684,
-        //        lng: -6.177198,
-        //    },
-        //},
-        //{
-        //    name: 'Bear',
-        //    location: {
-        //        lat: 53.299684,
-        //        lng: -6.177198,
-        //    },
-        //},
+        {
+            name: 'Home',
+            location: {
+                lat: 53.299684,
+                lng: -6.177198,
+            },
+        },
+        {
+            name: 'Bear',
+            location: {
+                lat: 53.301403,
+                lng: -6.177578,
+            },
+        },
     ];
 }
 
@@ -61,13 +61,13 @@ var models = [
     //    info: 'Dragonite',
     //    position: '0 10 0'
     //},
-    {
-        url: './assets/cesiumMan/cesiumMan.gltf',
-        scale: '0.2 0.2 0.2',
-        rotation: '0 180 0',
-        info: 'Cesium Man',
-        // position: '0 10 0'
-    },
+    //{
+    //    url: './assets/cesiumMan/cesiumMan.gltf',
+    //    scale: '0.2 0.2 0.2',
+    //    rotation: '0 180 0',
+    //    info: 'Cesium Man',
+    //    // position: '0 10 0'
+    //},
     //{
     //    url: './assets/elephant.glb',
     //    scale: '0.2 0.2 0.2',
