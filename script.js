@@ -15,47 +15,65 @@ function staticLoadPlaces() {
                 lng: -6.176398,
             },
         },
-        {
-            name: 'Peri',
-            location: {
-                lat: 53.300438,
-                lng: -6.176597,
-            },
-        },
+        //{
+        //    name: 'Peri',
+        //    location: {
+        //        lat: 53.300438,
+        //        lng: -6.176597,
+        //    },
+        //},
+        //{
+        //    name: 'Home',
+        //    location: {
+        //        lat: 53.299684,
+        //        lng: -6.177198,
+        //    },
+        //},
+        //{
+        //    name: 'Bear',
+        //    location: {
+        //        lat: 53.299684,
+        //        lng: -6.177198,
+        //    },
+        //},
     ];
 }
 
 var models = [
-    {
-        url: './assets/magnemite/scene.gltf',
-        scale: '0.5 0.5 0.5',
-        info: 'Magnemite',
-        rotation: '0 180 0',
-    },
-    {
-        url: './assets/articuno/scene.gltf',
-        scale: '0.1 0.1 0.1',
-        rotation: '0 180 0',
-        info: 'Articuno',
-    },
-    {
-        url: './assets/dragonite/scene.gltf',
-        scale: '0.2 0.2 0.2',
-        rotation: '0 180 0',
-        info: 'Dragonite',
-    },
+    //{
+    //    url: './assets/magnemite/scene.gltf',
+    //    scale: '0.5 0.5 0.5',
+    //    rotation: '0 180 0',
+    //    info: 'Magnemite',
+    //    position: '0 10 0'
+    //},
+    //{
+    //    url: './assets/articuno/scene.gltf',
+    //    scale: '0.1 0.1 0.1',
+    //    rotation: '0 180 0',
+    //    info: 'Articuno',
+    //    position: '0 10 0'
+    //},
+    //{
+    //    url: './assets/dragonite/scene.gltf',
+    //    scale: '0.2 0.2 0.2',
+    //    rotation: '0 180 0',
+    //    info: 'Dragonite',
+    //    position: '0 10 0'
+    //},
     {
         url: './assets/cesiumMan/cesiumMan.glb',
         scale: '0.2 0.2 0.2',
         rotation: '0 180 0',
         info: 'Cesium Man',
+        position: '0 10 0'
     },
-    {
-        url: './assets/elephant.glb',
-        scale: '0.2 0.2 0.2',
-        rotation: '0 180 0',
-        info: 'Elephant',
-    },
+    //{
+    //    url: './assets/elephant.glb',
+    //    scale: '0.2 0.2 0.2',
+    //    rotation: '0 180 0',
+    //    info: 'Elephant',
+    //},
 ];
 
 var modelIndex = 0;
@@ -74,8 +92,8 @@ var setModel = function (model, entity) {
 
     entity.setAttribute('gltf-model', model.url);
 
-    const div = document.querySelector('.instructions');
-    div.innerText = model.info;
+    const name = document.querySelector('.name');
+    name.innerText = model.info;
 };
 
 function renderPlaces(places) {
@@ -94,10 +112,13 @@ function renderPlaces(places) {
 
         document.querySelector('button[data-action="change"]').addEventListener('click', function () {
             //var entity = document.querySelector('[gps-entity-place]');
-            var entity = document.querySelectorAll('[gps-entity-place]')[1];
+            var entity = document.querySelectorAll('[gps-entity-place]')[0];
             modelIndex++;
-            var newIndex = modelIndex % models.length;
-            setModel(models[newIndex], entity);
+            if (models.length <= modelIndex) {
+                modelIndex = 0;
+            }
+            // var newIndex = modelIndex % models.length;
+            setModel(models[modelIndex], entity);
         });
 
         scene.appendChild(model);
