@@ -37,6 +37,13 @@ var models = [
         rotation: '0 180 0',
         info: 'Dragonite',
     },
+    ,
+    {
+        url: './assets/elephant.glb',
+        scale: '0.2 0.2 0.2',
+        rotation: '0 180 0',
+        info: 'Elephant',
+    },
 ];
 
 var modelIndex = 0;
