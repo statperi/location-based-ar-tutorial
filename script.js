@@ -3,7 +3,7 @@
     button.innerText = '﹖';
 
     let places = staticLoadPlaces();
-    //renderPlaces(places);
+    renderPlaces(places);
 };
 
 function staticLoadPlaces() {
@@ -13,6 +13,13 @@ function staticLoadPlaces() {
             location: {
                 lat: 53.300399,
                 lng: -6.176398,
+            },
+        },
+        {
+            name: 'Peri',
+            location: {
+                lat: 53.300438,
+                lng: -6.176597,
             },
         },
     ];
@@ -37,7 +44,6 @@ var models = [
         rotation: '0 180 0',
         info: 'Dragonite',
     },
-    ,
     {
         url: './assets/elephant.glb',
         scale: '0.2 0.2 0.2',
