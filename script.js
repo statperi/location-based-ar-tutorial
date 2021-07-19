@@ -45,7 +45,7 @@ var models = [
         scale: '0.5 0.5 0.5',
         rotation: '0 180 0',
         info: 'Magnemite',
-        position: '0 10 0'
+        // position: '0 10 0'
     },
     {
         url: './assets/articuno/scene.gltf',
