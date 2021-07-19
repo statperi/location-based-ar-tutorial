@@ -113,12 +113,16 @@ function renderPlaces(places) {
         document.querySelector('button[data-action="change"]').addEventListener('click', function () {
             //var entity = document.querySelector('[gps-entity-place]');
             var entity = document.querySelectorAll('[gps-entity-place]')[0];
+
             modelIndex++;
-            if (models.length <= modelIndex) {
-                modelIndex = 0;
-            }
-            // var newIndex = modelIndex % models.length;
-            setModel(models[modelIndex], entity);
+            var newIndex = modelIndex % models.length;
+            setModel(models[newIndex], entity);
+
+            //modelIndex++;
+            //if (models.length <= modelIndex) {
+            //    modelIndex = 0;
+            //}
+            //setModel(models[modelIndex], entity);
         });
 
         scene.appendChild(model);
