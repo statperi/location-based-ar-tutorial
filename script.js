@@ -47,13 +47,13 @@ var models = [
     //    info: 'Magnemite',
     //    position: '0 10 0'
     //},
-    //{
-    //    url: './assets/articuno/scene.gltf',
-    //    scale: '0.1 0.1 0.1',
-    //    rotation: '0 180 0',
-    //    info: 'Articuno',
-    //    position: '0 10 0'
-    //},
+    {
+        url: './assets/articuno/scene.gltf',
+        scale: '0.1 0.1 0.1',
+        rotation: '0 180 0',
+        info: 'Articuno',
+        position: '0 10 0'
+    },
     //{
     //    url: './assets/dragonite/scene.gltf',
     //    scale: '0.2 0.2 0.2',
@@ -61,13 +61,13 @@ var models = [
     //    info: 'Dragonite',
     //    position: '0 10 0'
     //},
-    {
-        url: './assets/cesiumMan/cesiumMan.gltf',
-        scale: '0.2 0.2 0.2',
-        rotation: '0 180 0',
-        info: 'Cesium Man',
-        position: '0 10 0'
-    },
+    //{
+    //    url: './assets/cesiumMan/cesiumMan.gltf',
+    //    scale: '0.2 0.2 0.2',
+    //    rotation: '0 180 0',
+    //    info: 'Cesium Man',
+    //    position: '0 10 0'
+    //},
     //{
     //    url: './assets/elephant.glb',
     //    scale: '0.2 0.2 0.2',
