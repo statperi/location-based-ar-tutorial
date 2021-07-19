@@ -45,6 +45,12 @@ var models = [
         info: 'Dragonite',
     },
     {
+        url: './assets/cesiumMan/cesiumMan.glb',
+        scale: '0.2 0.2 0.2',
+        rotation: '0 180 0',
+        info: 'Cesium Man',
+    },
+    {
         url: './assets/elephant.glb',
         scale: '0.2 0.2 0.2',
         rotation: '0 180 0',
