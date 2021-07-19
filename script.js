@@ -74,7 +74,8 @@ function renderPlaces(places) {
         model.setAttribute('animation-mixer', '');
 
         document.querySelector('button[data-action="change"]').addEventListener('click', function () {
-            var entity = document.querySelector('[gps-entity-place]')[1];
+            //var entity = document.querySelector('[gps-entity-place]');
+            var entity = document.querySelectorAll('[gps-entity-place]')[1];
             modelIndex++;
             var newIndex = modelIndex % models.length;
             setModel(models[newIndex], entity);
