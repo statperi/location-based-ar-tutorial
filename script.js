@@ -4,12 +4,25 @@
 
     let places = staticLoadPlaces();
     renderPlaces(places);
+
+
+
+    //window.addEventListener('gps-camera-update-position', e => {
+
+    //    console.log(e);
+
+    //    //if (this.loaded === false) {
+    //    //    this._loadPeaks(e.detail.position.longitude, e.detail.position.latitude);
+    //    //    this.loaded = true;
+    //    //}
+    //});
+
 };
 
 function staticLoadPlaces() {
     return [
         {
-            name: 'Pokèmon',
+            name: 'Voicesage',
             location: {
                 lat: 53.300399,
                 lng: -6.176398,
@@ -54,13 +67,13 @@ var models = [
         info: 'Articuno',
         // position: '0 10 0'
     },
-    //{
-    //    url: './assets/dragonite/scene.gltf',
-    //    scale: '0.2 0.2 0.2',
-    //    rotation: '0 180 0',
-    //    info: 'Dragonite',
-    //    position: '0 10 0'
-    //},
+    {
+        url: './assets/dragonite/scene.gltf',
+        scale: '0.2 0.2 0.2',
+        rotation: '0 180 0',
+        info: 'Dragonite',
+        //position: '0 10 0'
+    },
     //{
     //    url: './assets/cesiumMan/cesiumMan.gltf',
     //    scale: '0.2 0.2 0.2',

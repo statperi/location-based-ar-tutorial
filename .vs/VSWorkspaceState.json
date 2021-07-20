@@ -2,9 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\assets",
-    "\\assets\\articuno",
+    "\\assets\\CesiumMan",
+    "\\assets\\CesiumMan\\textures",
     "\\assets\\dragonite",
-    "\\assets\\magnemite"
+    "\\assets\\dragonite\\textures",
+    "\\assets\\magnemite",
+    "\\assets\\magnemite\\textures"
   ],
   "SelectedNode": "\\script.js",
   "PreviewInSolutionExplorer": false
