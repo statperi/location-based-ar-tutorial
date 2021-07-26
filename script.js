@@ -49,22 +49,29 @@ function staticLoadPlaces() {
                 lng: -6.177578,
             },
         },
+        {
+            name: 'Spire',
+            location: {
+                lat: 53.349810,
+                lng: -6.260130,
+            },
+        },
     ];
 }
 
 var models = [
     {
-        url: './assets/magnemite/scene.gltf',
-        scale: '0.5 0.5 0.5',
-        rotation: '0 180 0',
-        info: 'Magnemite',
-        // position: '0 10 0'
-    },
-    {
         url: './assets/articuno/scene.gltf',
         scale: '0.1 0.1 0.1',
         rotation: '0 180 0',
         info: 'Articuno',
+        // position: '0 10 0'
+    },
+    {
+        url: './assets/magnemite/scene.gltf',
+        scale: '0.5 0.5 0.5',
+        rotation: '0 180 0',
+        info: 'Magnemite',
         // position: '0 10 0'
     },
     {
