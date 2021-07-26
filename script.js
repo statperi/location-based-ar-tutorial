@@ -145,7 +145,9 @@ function renderPlaces(places) {
         var newIndex = modelIndex % models.length;
         //setModel(models[newIndex], entity);
 
-        entities.forEach(entity => setModel(models[newIndex], entity));
+        for (var i = 0; i < entities.length -1; i++) {
+            setModel(models[newIndex], entities[i]);
+        }
 
 
         //modelIndex++;
