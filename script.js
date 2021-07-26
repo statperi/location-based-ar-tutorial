@@ -139,7 +139,7 @@ function renderPlaces(places) {
     document.querySelector('button[data-action="change"]').addEventListener('click', function () {
         //var entity = document.querySelector('[gps-entity-place]');
         //var entity = document.querySelectorAll('[gps-entity-place]')[0];
-        var entities = document.querySelectorAll('[gps-entity-place]')[0];
+        var entities = document.querySelectorAll('[gps-entity-place]');
 
         modelIndex++;
         var newIndex = modelIndex % models.length;
