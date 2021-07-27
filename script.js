@@ -67,16 +67,23 @@ var models = [
         info: 'Articuno',
         // position: '0 10 0'
     },
+    //{
+    //    url: './assets/magnemite/scene.gltf',
+    //    scale: '0.5 0.5 0.5',
+    //    rotation: '0 180 0',
+    //    info: 'Magnemite',
+    //    // position: '0 10 0'
+    //},
+    //{
+    //    url: './assets/dragonite/scene.gltf',
+    //    scale: '0.05 0.05 0.05',
+    //    rotation: '0 180 0',
+    //    info: 'Dragonite',
+    //    //position: '0 10 0'
+    //},
     {
-        url: './assets/magnemite/scene.gltf',
-        scale: '0.5 0.5 0.5',
-        rotation: '0 180 0',
-        info: 'Magnemite',
-        // position: '0 10 0'
-    },
-    {
-        url: './assets/dragonite/scene.gltf',
-        scale: '0.05 0.05 0.05',
+        url: './assets/phoenix_bird/scene.gltf',
+        scale: '0.1 0.1 0.1',
         rotation: '0 180 0',
         info: 'Dragonite',
         //position: '0 10 0'
