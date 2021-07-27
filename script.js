@@ -85,7 +85,21 @@ var models = [
         url: './assets/phoenix_bird/scene.gltf',
         scale: '0.1 0.1 0.1',
         rotation: '0 180 0',
-        info: 'Dragonite',
+        info: 'Bird',
+        //position: '0 10 0'
+    },
+    {
+        url: './assets/bear/scene.gltf',
+        scale: '0.1 0.1 0.1',
+        rotation: '0 180 0',
+        info: 'Bear',
+        //position: '0 10 0'
+    },
+    {
+        url: './assets/hargor/scene.gltf',
+        scale: '0.1 0.1 0.1',
+        rotation: '0 180 0',
+        info: 'Bear',
         //position: '0 10 0'
     },
     //{
