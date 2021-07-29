@@ -152,7 +152,7 @@ function renderPlaces(places) {
         model.setAttribute('animation-mixer', '');
 
         if (place.name == 'Voicesage') {
-            setTimeout(calculateDistance(model), 3000);
+            setInterval(calculateDistance(model), 3000);
         }
 
         scene.appendChild(model);
