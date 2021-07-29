@@ -135,6 +135,10 @@ var setModel = function (model, entity) {
 
     const name = document.querySelector('.name');
     name.innerText = model.info;
+
+    let distance = entity.getAttribute('distance');
+    name.innerText += ' ' + distance + ' meters';
+
 };
 
 function renderPlaces(places) {
