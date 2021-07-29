@@ -118,7 +118,7 @@ var models = [
 ];
 
 var modelIndex = 0;
-var setModel = function (model, entity, calculateMeters) {
+var setModel = function (model, entity) {
     if (model.scale) {
         entity.setAttribute('scale', model.scale);
     }
@@ -133,28 +133,27 @@ var setModel = function (model, entity, calculateMeters) {
 
     entity.setAttribute('gltf-model', model.url);
 
-    
-    if (calculateMeters) 
-        distance = entity.getAttribute('distance');
-    
-
     const name = document.querySelector('.name');
-    name.innerText = model.info + ' ' + distance + ' meters';
+    name.innerText = model.info;
 };
 
 function renderPlaces(places) {
     let scene = document.querySelector('a-scene');
 
-    places.forEach((place, inx) => {
+    places.forEach((place) => {
         let latitude = place.location.lat;
         let longitude = place.location.lng;
 
         let model = document.createElement('a-entity');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
 
-        setModel(models[modelIndex], model, inx == 0);
+        setModel(models[modelIndex], model);
 
         model.setAttribute('animation-mixer', '');
+
+        if (place.name == 'Voicesage') {
+            setTimeout(calculateDistance(model), 3000);
+        }
 
         scene.appendChild(model);
     });
@@ -170,8 +169,20 @@ function renderPlaces(places) {
         //setModel(models[newIndex], entity);
 
         for (var i = 0; i < entities.length -1; i++) {
-            setModel(models[newIndex], entities[i], i == 0);
+            setModel(models[newIndex], entities[i]);
         }
     });
+
+
+    function calculateDistance(entity) {
+        let distance = entity.getAttribute('distance');
+
+        if (distance) {
+            const name = document.querySelector('.name');
+            name.innerText += ' ' + distance + ' meters';
+        }
+        
+    }
+
 }
 
