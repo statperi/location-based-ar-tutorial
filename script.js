@@ -95,13 +95,13 @@ var models = [
         info: 'Bear',
         //position: '0 10 0'
     },
-    {
-        url: './assets/hargor/scene.gltf',
-        scale: '0.1 0.1 0.1',
-        rotation: '0 180 0',
-        info: 'Bear',
-        //position: '0 10 0'
-    },
+    //{
+    //    url: './assets/hargor/scene.gltf',
+    //    scale: '0.1 0.1 0.1',
+    //    rotation: '0 180 0',
+    //    info: 'Bear',
+    //    //position: '0 10 0'
+    //},
     //{
     //    url: './assets/cesiumMan/cesiumMan.gltf',
     //    scale: '0.2 0.2 0.2',
@@ -118,7 +118,7 @@ var models = [
 ];
 
 var modelIndex = 0;
-var setModel = function (model, entity, showMeters) {
+var setModel = function (model, entity, calculateMeters) {
     if (model.scale) {
         entity.setAttribute('scale', model.scale);
     }
@@ -136,10 +136,12 @@ var setModel = function (model, entity, showMeters) {
     const name = document.querySelector('.name');
     name.innerText = model.info;
 
-    if (showMeters) {
-        let distance = entity.getAttribute('distance');
-        name.innerText += ' ' + distance + ' meters';
+    var distance = distance || 0;
+    if (calculateMeters) {
+        distance = entity.getAttribute('distance');
     }
+
+    name.innerText += ' ' + distance + ' meters';
 };
 
 function renderPlaces(places) {
