@@ -5,7 +5,8 @@
     let places = staticLoadPlaces();
     renderPlaces(places);
 
-    var distanse = 0;
+    var distance = 0;
+    var modelName = '';
 
     //window.addEventListener('gps-camera-update-position', e => {
 
@@ -134,7 +135,7 @@ var setModel = function (model, entity) {
     entity.setAttribute('gltf-model', model.url);
 
     const name = document.querySelector('.name');
-    name.innerText = model.info;
+    modelName = name.innerText = model.info;
 };
 
 function renderPlaces(places) {
@@ -177,7 +178,7 @@ function renderPlaces(places) {
     function calculateDistance(entity) {
 
         setInterval(function () {
-            let distance = entity.getAttribute('distance');
+            distance = entity.getAttribute('distance');
 
             console.log('distance: ', distance);
 
@@ -186,7 +187,7 @@ function renderPlaces(places) {
 
                 console.log('name element: ', name);
 
-                name.innerText += ' ' + distance + ' meters';
+                name.innerText = modelName + ' ' + Math.trunc(distance) + ' meters';
             }
         }, 3000);
     }
