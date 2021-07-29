@@ -118,7 +118,7 @@ var models = [
 ];
 
 var modelIndex = 0;
-var setModel = function (model, entity) {
+var setModel = function (model, entity, showMeters) {
     if (model.scale) {
         entity.setAttribute('scale', model.scale);
     }
@@ -136,26 +136,25 @@ var setModel = function (model, entity) {
     const name = document.querySelector('.name');
     name.innerText = model.info;
 
-    let distance = entity.getAttribute('distance');
-    name.innerText += ' ' + distance + ' meters';
-
+    if (showMeters) {
+        let distance = entity.getAttribute('distance');
+        name.innerText += ' ' + distance + ' meters';
+    }
 };
 
 function renderPlaces(places) {
     let scene = document.querySelector('a-scene');
 
-    places.forEach((place) => {
+    places.forEach((place, inx) => {
         let latitude = place.location.lat;
         let longitude = place.location.lng;
 
         let model = document.createElement('a-entity');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
 
-        setModel(models[modelIndex], model);
+        setModel(models[modelIndex], model, inx == 0);
 
         model.setAttribute('animation-mixer', '');
-
-        
 
         scene.appendChild(model);
     });
@@ -171,15 +170,8 @@ function renderPlaces(places) {
         //setModel(models[newIndex], entity);
 
         for (var i = 0; i < entities.length -1; i++) {
-            setModel(models[newIndex], entities[i]);
+            setModel(models[newIndex], entities[i], i == 0);
         }
-
-
-        //modelIndex++;
-        //if (models.length <= modelIndex) {
-        //    modelIndex = 0;
-        //}
-        //setModel(models[modelIndex], entity);
     });
 }
 
