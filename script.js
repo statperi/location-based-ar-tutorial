@@ -152,7 +152,7 @@ function renderPlaces(places) {
         model.setAttribute('animation-mixer', '');
 
         if (place.name == 'Voicesage') {
-            setInterval(calculateDistance(model), 3000);
+            calculateDistance(model);
         }
 
         scene.appendChild(model);
@@ -175,13 +175,20 @@ function renderPlaces(places) {
 
 
     function calculateDistance(entity) {
-        let distance = entity.getAttribute('distance');
 
-        if (distance) {
-            const name = document.querySelector('.name');
-            name.innerText += ' ' + distance + ' meters';
-        }
-        
+        setInterval(function () {
+            let distance = entity.getAttribute('distance');
+
+            console.log('distance: ', distance);
+
+            if (distance) {
+                const name = document.querySelector('.name');
+
+                console.log('name element: ', name);
+
+                name.innerText += ' ' + distance + ' meters';
+            }
+        }, 3000);
     }
 
 }
