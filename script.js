@@ -72,8 +72,7 @@ var models = [
         url: './assets/articuno/scene.gltf',
         scale: '0.1 0.1 0.1',
         rotation: '0 180 0',
-        info: 'Articuno',
-        position: '0 30 0'
+        info: 'Articuno'
     },
     //{
     //    url: './assets/magnemite/scene.gltf',
@@ -93,15 +92,13 @@ var models = [
         url: './assets/phoenix_bird/scene.gltf',
         scale: '0.1 0.1 0.1',
         rotation: '0 180 0',
-        info: 'Bird',
-        position: '0 10 0'
+        info: 'Bird'
     },
     {
         url: './assets/bear/scene.gltf',
         scale: '0.1 0.1 0.1',
         rotation: '0 180 0',
-        info: 'Bear',
-        position: '0 20 0'
+        info: 'Bear'
     },
     //{
     //    url: './assets/hargor/scene.gltf',
@@ -168,8 +165,6 @@ function renderPlaces(places) {
 
 
     document.querySelector('button[data-action="change"]').addEventListener('click', function () {
-        //var entity = document.querySelector('[gps-entity-place]');
-        //var entity = document.querySelectorAll('[gps-entity-place]')[0];
         var entities = document.querySelectorAll('a-entity[gps-entity-place]');
 
         modelIndex++;

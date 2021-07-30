@@ -23,10 +23,8 @@
 <body style='margin: 0; overflow: hidden;'>
     <div class="centered name"></div>
     <a-scene vr-mode-ui='enabled: false'
-             renderer="logarithmicDepthBuffer: true;"
              embedded
-             arjs='trackingMethod: best;
-                    sourceType: webcam;
+             arjs='sourceType: webcam;
                     sourceWidth:1280;
                     sourceHeight:960;
                     displayWidth: 1280;
@@ -39,12 +37,12 @@
                 scale="50 50 50"
                 gps-entity-place="latitude: 53.3402763; longitude: -6.189487;"></a-text>-->
 
-        <a-text value="VoiceSage"
+        <!--<a-text value="VoiceSage"
                 look-at="[gps-camera]"
                 scale="10 10 10"
-                gps-entity-place="latitude: 53.300399; longitude: -6.176398;"></a-text>
+                gps-entity-place="latitude: 53.300399; longitude: -6.176398;"></a-text>-->
 
-        <!--<a-text value="Bear coffee"
+        <a-text value="Bear coffee"
                 look-at="[gps-camera]"
                 scale="10 10 10"
                 gps-entity-place="latitude: 53.301403; longitude: -6.177578;"></a-text>
@@ -52,22 +50,12 @@
         <a-text value="Spire"
                 look-at="[gps-camera]"
                 scale="50 50 50"
-                gps-entity-place="latitude: 53.349810; longitude: -6.260130;"></a-text>-->
+                gps-entity-place="latitude: 53.349810; longitude: -6.260130;"></a-text>
 
-        <!--<a-camera gps-camera="minDistance:5; maxDistance: 10; gpsTimeInterval: 1000; gpsMinDistance: 5;"
+        <a-camera gps-camera="minDistance:5; maxDistance: 10; gpsTimeInterval: 1000; gpsMinDistance: 5;"
                   arjs-look-controls='smoothingFactor: 0.1'
-                  rotation-reader></a-camera>-->
-
-        <a-camera gps-camera="gpsTimeInterval: 1000; gpsMinDistance: 5;"
-                  arjs-look-controls='smoothingFactor: 1'
                   rotation-reader></a-camera>
 
-        <!--<a-entity gltf-model="./assets/articuno/scene.gltf"
-    rotation="0 180 0"
-    scale="0.15 0.15 0.15"
-    gps-entity-place="longitude: -6.17628; latitude: 53.30024;"
-    animation-mixer
-    position="0 1.6 0"/>-->
     </a-scene>
     <div class="centered">
         <button data-action="change"></button>
