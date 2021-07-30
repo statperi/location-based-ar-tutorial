@@ -8,17 +8,6 @@
     var distance = 0;
     var modelName = '';
     // var isMarkerVisible = false;
-
-    //window.addEventListener('gps-camera-update-position', e => {
-
-    //    console.log(e);
-
-    //    //if (this.loaded === false) {
-    //    //    this._loadPeaks(e.detail.position.longitude, e.detail.position.latitude);
-    //    //    this.loaded = true;
-    //    //}
-    //});
-
 };
 
 function staticLoadPlaces() {
@@ -70,6 +59,7 @@ function staticLoadPlaces() {
 
 var models = [
     {
+        code : 'articuno',
         url: './assets/articuno/scene.gltf',
         scale: '0.1 0.1 0.1',
         rotation: '0 180 0',
@@ -90,12 +80,14 @@ var models = [
     //    //position: '0 10 0'
     //},
     {
+        code: 'bird',
         url: './assets/phoenix_bird/scene.gltf',
         scale: '0.1 0.1 0.1',
         rotation: '0 180 0',
         info: 'Bird'
     },
     {
+        code: 'bear',
         url: './assets/bear/scene.gltf',
         scale: '0.1 0.1 0.1',
         rotation: '0 180 0',
@@ -125,20 +117,28 @@ var models = [
 
 var modelIndex = 0;
 var setModel = function (model, entity) {
+    var element = $(entity);
+
     if (model.scale) {
-        entity.setAttribute('scale', model.scale);
+        // entity.setAttribute('scale', model.scale);
+        element.attr('scale', model.scale);
     }
 
     if (model.rotation) {
-        entity.setAttribute('rotation', model.rotation);
+        //entity.setAttribute('rotation', model.rotation);
+        element.attr('rotation', model.rotation);
     }
 
     if (model.position) {
-        entity.setAttribute('position', model.position);
+        // entity.setAttribute('position', model.position);
+        element.attr('position', model.position);
     }
 
-    entity.setAttribute('gltf-model', model.url);
-    entity.setAttribute('animation-mixer', '');
+    //entity.setAttribute('gltf-model', model.url);
+    //entity.setAttribute('animation-mixer', '');
+
+    element.attr('gltf-model', model.url);
+    element.attr('animation-mixer', '');
 
     const name = document.querySelector('.name');
     modelName = name.innerText = model.info;
@@ -160,10 +160,7 @@ function renderPlaces(places) {
             calculateVoicesageDistance(model);
         }
 
-
-        var parent = $('.test-div');
-        parent.append(model);
-        // scene.appendChild(model);
+        scene.appendChild(model);
     });
 
 
