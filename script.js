@@ -163,7 +163,7 @@ function renderPlaces(places) {
     document.querySelector('button[data-action="change"]').addEventListener('click', function () {
         //var entity = document.querySelector('[gps-entity-place]');
         //var entity = document.querySelectorAll('[gps-entity-place]')[0];
-        var entities = document.querySelectorAll('[gps-entity-place]');
+        var entities = document.querySelectorAll('a-entity[gps-entity-place]');
 
         modelIndex++;
         var newIndex = modelIndex % models.length;
@@ -176,17 +176,11 @@ function renderPlaces(places) {
 
 
     function calculateDistance(entity) {
-
         setInterval(function () {
             distance = entity.getAttribute('distance');
 
-            console.log('distance: ', distance);
-
             if (distance) {
                 const name = document.querySelector('.name');
-
-                console.log('name element: ', name);
-
                 name.innerText = modelName + ' ' + Math.trunc(distance) + ' meters';
             }
         }, 3000);
