@@ -7,6 +7,7 @@
 
     var distance = 0;
     var modelName = '';
+    // var isMarkerVisible = false;
 
     //window.addEventListener('gps-camera-update-position', e => {
 
@@ -137,6 +138,7 @@ var setModel = function (model, entity) {
     }
 
     entity.setAttribute('gltf-model', model.url);
+    entity.setAttribute('animation-mixer', '');
 
     const name = document.querySelector('.name');
     modelName = name.innerText = model.info;
@@ -154,13 +156,14 @@ function renderPlaces(places) {
 
         setModel(models[modelIndex], model);
 
-        model.setAttribute('animation-mixer', '');
-
         if (place.name == 'Voicesage') {
-            calculateDistance(model);
+            calculateVoicesageDistance(model);
         }
 
-        scene.appendChild(model);
+
+        var parent = $('.test-div');
+        parent.appendChild(model);
+        // scene.appendChild(model);
     });
 
 
@@ -169,7 +172,6 @@ function renderPlaces(places) {
 
         modelIndex++;
         var newIndex = modelIndex % models.length;
-        //setModel(models[newIndex], entity);
 
         for (var i = 0; i < entities.length -1; i++) {
             setModel(models[newIndex], entities[i]);
@@ -177,16 +179,26 @@ function renderPlaces(places) {
     });
 
 
-    function calculateDistance(entity) {
-        setInterval(function () {
-            distance = entity.getAttribute('distance');
+    //scene.addEventListener("onefingermove", rotate);
+    //scene.addEventListener("markerFound", (e) => { isMarkerVisible = true; });
+    //scene.addEventListener("markerLost", (e) => { isMarkerVisible = false; });
+}
 
-            if (distance) {
-                const name = document.querySelector('.name');
-                name.innerText = modelName + ' ' + Math.trunc(distance) + ' meters';
-            }
-        }, 3000);
-    }
+function calculateVoicesageDistance(entity) {
+    setInterval(function () {
+        distance = entity.getAttribute('distance');
 
+        if (distance) {
+            const name = document.querySelector('.name');
+            name.innerText = modelName + ' ' + Math.trunc(distance) + ' meters';
+        }
+    }, 3000);
+}
+
+function calculateDistance(entity) {
+    setInterval(function () {
+        distance = entity.getAttribute('distance');
+        
+    }, 3000);
 }
 
