@@ -162,7 +162,7 @@ function renderPlaces(places) {
 
 
         var parent = $('.test-div');
-        parent.appendChild(model);
+        parent.append(model);
         // scene.appendChild(model);
     });
 
