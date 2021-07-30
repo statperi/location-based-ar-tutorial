@@ -57,6 +57,13 @@ function staticLoadPlaces() {
                 lng: -6.260130,
             },
         },
+        {
+            name: 'Poolbeg Powerstation',
+            location: {
+                lat: 53.3402763,
+                lng: -6.189487,
+            },
+        },
     ];
 }
 
