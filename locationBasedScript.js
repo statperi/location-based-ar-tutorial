@@ -26,18 +26,25 @@ function staticLoadPlaces() {
         //        lng: -6.176597,
         //    },
         //},
-        {
-            name: 'Home',
-            location: {
-                lat: 53.299684,
-                lng: -6.177198,
-            },
-        },
+        //{
+        //    name: 'Home',
+        //    location: {
+        //        lat: 53.299684,
+        //        lng: -6.177198,
+        //    },
+        //},
         {
             name: 'Bear',
             location: {
                 lat: 53.301403,
                 lng: -6.177578,
+            },
+        },
+        {
+            name: 'Bear Stillorgan',
+            location: {
+                lat: 53.2889278,
+                lng: -6.2071782,
             },
         },
         {
