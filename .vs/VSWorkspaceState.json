@@ -2,10 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\assets",
-    "\\assets\\ImageVideo",
     "\\assets\\ImageVideo\\Grattan",
     "\\assets\\ImageVideo\\Pinball"
   ],
-  "SelectedNode": "\\assets\\ImageVideo\\Grattan\\grattan_house.fset",
+  "SelectedNode": "\\locationBasedScript.js",
   "PreviewInSolutionExplorer": false
 }

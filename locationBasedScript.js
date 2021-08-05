@@ -194,7 +194,8 @@ function calculateVoicesageDistance(entity) {
 
         if (distance) {
             const name = document.querySelector('.name');
-            name.innerText = modelName + ' ' + Math.trunc(distance) + ' meters';
+            // name.innerText = modelName + ' ' + Math.trunc(distance) + ' meters';
+            name.innerText = modelName + ' ' + distance + ' meters';
         }
     }, 3000);
 }
