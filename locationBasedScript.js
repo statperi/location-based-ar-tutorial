@@ -163,7 +163,9 @@ function renderPlaces(places) {
 
         setModel(models[modelIndex], model);
 
-        if (place.name == 'Voicesage') {
+        //if (place.name == 'Voicesage') {
+        if (place.name == 'Poolbeg Powerstation') {
+            
             calculateVoicesageDistance(model);
         }
 
