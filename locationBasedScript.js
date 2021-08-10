@@ -61,6 +61,34 @@ function staticLoadPlaces() {
                 lng: -6.189487,
             },
         },
+        {
+            name: 'Home Greece',
+            location: {
+                lat: 37.961904,
+                lng: 23.760348,
+            },
+        },
+        {
+            name: 'Syntagma',
+            location: {
+                lat: 37.975620,
+                lng: 23.734530,
+            },
+        },
+        {
+            name: 'Spiti Kochliou',
+            location: {
+                lat: 38.056250,
+                lng: 23.815440,
+            },
+        },
+        {
+            name: 'Spiti Kochliou',
+            location: {
+                lat: 37.855610,
+                lng: 24.785370,
+            },
+        },
     ];
 }
 

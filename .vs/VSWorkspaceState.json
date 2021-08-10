@@ -1,9 +1,7 @@
 {
   "ExpandedNodes": [
     "",
-    "\\assets",
-    "\\assets\\ImageVideo\\Grattan",
-    "\\assets\\ImageVideo\\Pinball"
+    "\\assets"
   ],
   "SelectedNode": "\\locationBasedScript.js",
   "PreviewInSolutionExplorer": false
