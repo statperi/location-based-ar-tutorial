@@ -144,24 +144,12 @@ function renderPlaces(places) {
     document.querySelector('button[data-action="search"]').addEventListener('click', function () {
         clearModels();
 
-        let scene = document.querySelector('a-scene');
-
-        // search google api
+        let bird = models[1];
         let text = $('.searchtext')[0].value;
-        let map = new google.maps.Map(document.getElementById("map"), {});
-        let service = new google.maps.places.PlacesService(map);
+        let place = getPlace(text);
 
-        const request = {
-            query: text,
-            fields: ["name", "geometry"],
-        };
+        createModel(bird, place);
 
-        service.findPlaceFromQuery(request, (results, status) => {
-            if (status === google.maps.places.PlacesServiceStatus.OK && results) {
-                console.log(results);
-            }
-        });
-        
     });
 }
 
@@ -184,6 +172,57 @@ function calculateDistance(entity) {
     }, 3000);
 }
 
+
+
+function createModel(model, place) {
+    let scene = document.querySelector('a-scene');
+    let entity = document.createElement('a-entity');
+    entity.setAttribute('gps-entity-place', `latitude: ${place.location.lat}; longitude: ${place.location.lng};`);
+
+    setModel(bird, entity);
+
+    scene.appendChild(model);
+}
+
+function getPlace(text) {
+    let place;
+    if (text.toUpperCase() === "Grattan House".toUpperCase()) {
+        place = {
+            name: 'Voicesage',
+            location: { lat: 53.300399, lng: -6.176398 }
+        }
+    } else if (text.toUpperCase() === "Bear".toUpperCase()) {
+        place = {
+            name: 'Bear',
+            location: { lat: 53.301403, lng: 6.177578 }
+        }
+    } else {
+        place = {
+            name: 'Home',
+            location: { lat: 53.299684, lng: -6.177198 }
+        }
+    }
+
+    return place;
+
+
+
+
+    // search google map api
+    //let map = new google.maps.Map(document.getElementById("map"), {});
+    //let service = new google.maps.places.PlacesService(map);
+
+    //const request = {
+    //    query: text,
+    //    fields: ["name", "geometry"],
+    //};
+
+    //service.findPlaceFromQuery(request, (results, status) => {
+    //    if (status === google.maps.places.PlacesServiceStatus.OK && results) {
+    //        console.log(results);
+    //    }
+    //});
+}
 
 function clearModels() {
     var entities = $('a-entity[gps-entity-place]');
