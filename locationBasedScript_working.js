@@ -1,12 +1,12 @@
-﻿// geolocation api key AIzaSyD-vV3M2Lw1xf6YPPnEFB4dVFdUHFikwjM
-
-window.onload = () => {
+﻿window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
     button.innerText = '﹖';
 
     let places = staticLoadPlaces();
     renderPlaces(places);
 
+    var distance = 0;
+    var modelName = '';
     // var isMarkerVisible = false;
 };
 
@@ -65,6 +65,20 @@ var models = [
         rotation: '0 180 0',
         info: 'Articuno'
     },
+    //{
+    //    url: './assets/magnemite/scene.gltf',
+    //    scale: '0.5 0.5 0.5',
+    //    rotation: '0 180 0',
+    //    info: 'Magnemite',
+    //    // position: '0 10 0'
+    //},
+    //{
+    //    url: './assets/dragonite/scene.gltf',
+    //    scale: '0.05 0.05 0.05',
+    //    rotation: '0 180 0',
+    //    info: 'Dragonite',
+    //    //position: '0 10 0'
+    //},
     {
         code: 'bird',
         url: './assets/phoenix_bird/scene.gltf',
@@ -79,6 +93,26 @@ var models = [
         rotation: '0 180 0',
         info: 'Bear'
     },
+    //{
+    //    url: './assets/hargor/scene.gltf',
+    //    scale: '0.1 0.1 0.1',
+    //    rotation: '0 180 0',
+    //    info: 'Bear',
+    //    //position: '0 10 0'
+    //},
+    //{
+    //    url: './assets/cesiumMan/cesiumMan.gltf',
+    //    scale: '0.2 0.2 0.2',
+    //    rotation: '0 180 0',
+    //    info: 'Cesium Man',
+    //    // position: '0 10 0'
+    //},
+    //{
+    //    url: './assets/elephant.glb',
+    //    scale: '0.2 0.2 0.2',
+    //    rotation: '0 180 0',
+    //    info: 'Elephant',
+    //},
 ];
 
 var modelIndex = 0;
@@ -124,6 +158,7 @@ function renderPlaces(places) {
 
         //if (place.name == 'Voicesage') {
         if (place.name == 'Poolbeg Powerstation') {
+            
             calculateVoicesageDistance(model);
         }
 
@@ -143,15 +178,9 @@ function renderPlaces(places) {
     });
 
 
-    document.querySelector('button[data-action="search"]').addEventListener('click', function () {
-        clearModels();
-
-        let scene = document.querySelector('a-scene');
-
-        // search google api
-
-        
-    });
+    //scene.addEventListener("onefingermove", rotate);
+    //scene.addEventListener("markerFound", (e) => { isMarkerVisible = true; });
+    //scene.addEventListener("markerLost", (e) => { isMarkerVisible = false; });
 }
 
 function calculateVoicesageDistance(entity) {
@@ -171,11 +200,5 @@ function calculateDistance(entity) {
         distance = entity.getAttribute('distance');
         
     }, 3000);
-}
-
-
-function clearModels() {
-    var entities = $('a-entity[gps-entity-place]');
-    entities.remove();
 }
 
