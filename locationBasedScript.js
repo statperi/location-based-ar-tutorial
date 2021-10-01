@@ -4,8 +4,6 @@
 
     let places = staticLoadPlaces();
     renderPlaces(places);
-
-    // var isMarkerVisible = false;
 };
 
 function staticLoadPlaces() {
@@ -120,8 +118,7 @@ function renderPlaces(places) {
 
         setModel(models[modelIndex], model);
 
-        //if (place.name == 'Voicesage') {
-        if (place.name == 'Poolbeg Powerstation') {
+        if (place.name == 'Voicesage') {
             calculateVoicesageDistance(model);
         }
 
@@ -149,7 +146,6 @@ function renderPlaces(places) {
         let place = getPlace(text);
 
         createModel(bird, place);
-
     });
 }
 
@@ -202,26 +198,9 @@ function getPlace(text) {
             location: { lat: 53.299684, lng: -6.177198 }
         }
     }
-
     return place;
 
-
-
-
-    // search google map api
-    //let map = new google.maps.Map(document.getElementById("map"), {});
-    //let service = new google.maps.places.PlacesService(map);
-
-    //const request = {
-    //    query: text,
-    //    fields: ["name", "geometry"],
-    //};
-
-    //service.findPlaceFromQuery(request, (results, status) => {
-    //    if (status === google.maps.places.PlacesServiceStatus.OK && results) {
-    //        console.log(results);
-    //    }
-    //});
+    //getCoordinates(text);
 }
 
 function clearModels() {
@@ -229,3 +208,19 @@ function clearModels() {
     entities.remove();
 }
 
+//function getCoordinates(text) {
+//     search google map api
+//    let map = new google.maps.Map(document.getElementById("map"), {});
+//    let service = new google.maps.places.PlacesService(map);
+
+//    const request = {
+//        query: text,
+//        fields: ["name", "geometry"],
+//    };
+
+//    service.findPlaceFromQuery(request, (results, status) => {
+//        if (status === google.maps.places.PlacesServiceStatus.OK && results) {
+//            console.log(results);
+//        }
+//    });
+//}
