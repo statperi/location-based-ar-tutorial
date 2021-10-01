@@ -194,7 +194,7 @@ function getPlace(text) {
     } else if (text.toUpperCase() === "Bear".toUpperCase()) {
         place = {
             name: 'Bear',
-            location: { lat: 53.301403, lng: 6.177578 }
+            location: { lat: 53.301403, lng: -6.177578 }
         }
     } else {
         place = {
