@@ -36,7 +36,6 @@
                 look-at="[gps-camera]"
                 scale="50 50 50"
                 gps-entity-place="latitude: 53.3402763; longitude: -6.189487;"></a-text>-->
-
         <!--<a-text value="VoiceSage"
                 look-at="[gps-camera]"
                 scale="10 10 10"
@@ -50,12 +49,18 @@
                   arjs-look-controls='smoothingFactor: 0.1'
                   rotation-reader></a-camera>
     </a-scene>
+
+
+
     <div class="centered">
         <button class="swap" data-action="change"></button>
     </div>
     <div class="centered">
-        <input placeholder="Type the location to add a model" />
+        <input class="searchtext" placeholder="Type the location to add a model" />
         <button data-action="search"></button>
     </div>
+
+
+    <div id="map"></div>
 </body>
 </html>

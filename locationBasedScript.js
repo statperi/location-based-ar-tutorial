@@ -147,7 +147,20 @@ function renderPlaces(places) {
         let scene = document.querySelector('a-scene');
 
         // search google api
+        let text = $('.searchtext')[0].value;
+        let map = new google.maps.Map(document.getElementById("map"), {});
+        let service = new google.maps.places.PlacesService(map);
 
+        const request = {
+            query: text,
+            fields: ["name", "geometry"],
+        };
+
+        service.findPlaceFromQuery(request, (results, status) => {
+            if (status === google.maps.places.PlacesServiceStatus.OK && results) {
+                console.log(results);
+            }
+        });
         
     });
 }
