@@ -1,6 +1,4 @@
-﻿// geolocation api key AIzaSyD-vV3M2Lw1xf6YPPnEFB4dVFdUHFikwjM
-
-window.onload = () => {
+﻿window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
     button.innerText = '﹖';
 
