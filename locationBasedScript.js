@@ -179,9 +179,9 @@ function createModel(model, place) {
     let entity = document.createElement('a-entity');
     entity.setAttribute('gps-entity-place', `latitude: ${place.location.lat}; longitude: ${place.location.lng};`);
 
-    setModel(bird, entity);
+    setModel(model, entity);
 
-    scene.appendChild(model);
+    scene.appendChild(entity);
 }
 
 function getPlace(text) {
