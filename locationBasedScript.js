@@ -8,6 +8,9 @@
     var distance = 0;
     var modelName = '';
     // var isMarkerVisible = false;
+
+
+    testCall();
 };
 
 function staticLoadPlaces() {
@@ -19,20 +22,13 @@ function staticLoadPlaces() {
                 lng: -6.176398,
             },
         },
-        //{
-        //    name: 'Peri',
-        //    location: {
-        //        lat: 53.300438,
-        //        lng: -6.176597,
-        //    },
-        //},
-        //{
-        //    name: 'Home',
-        //    location: {
-        //        lat: 53.299684,
-        //        lng: -6.177198,
-        //    },
-        //},
+        {
+            name: 'Home',
+            location: {
+                lat: 53.299684,
+                lng: -6.177198,
+            },
+        },
         {
             name: 'Bear',
             location: {
@@ -60,35 +56,7 @@ function staticLoadPlaces() {
                 lat: 53.3402763,
                 lng: -6.189487,
             },
-        },
-        {
-            name: 'Home Greece',
-            location: {
-                lat: 37.961904,
-                lng: 23.760348,
-            },
-        },
-        {
-            name: 'Syntagma',
-            location: {
-                lat: 37.975620,
-                lng: 23.734530,
-            },
-        },
-        {
-            name: 'Spiti Kochliou',
-            location: {
-                lat: 38.056250,
-                lng: 23.815440,
-            },
-        },
-        {
-            name: 'Spiti Kochliou',
-            location: {
-                lat: 37.855610,
-                lng: 24.785370,
-            },
-        },
+        }
     ];
 }
 
@@ -235,5 +203,27 @@ function calculateDistance(entity) {
         distance = entity.getAttribute('distance');
         
     }, 3000);
+}
+
+
+
+
+function testCall() {
+    $.ajax
+        ({
+            type: "GET",
+            url: "https://webapi-dev.voicesage.com/conversations/queues/",
+            dataType: 'json',
+            headers: {
+                // "Authorization": "Basic " + btoa(USERNAME + ":" + PASSWORD)
+                "Authorization": "bearer bf43fb0dd264410496a983df7a55fec8"
+            },
+            // data: '{ "comment" }',
+            success: function (s) {
+                console.log(s);
+                alert('Thanks for your comment!');
+            }
+        });
+
 }
 
