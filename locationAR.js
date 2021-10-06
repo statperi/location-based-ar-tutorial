@@ -7,11 +7,6 @@ window.onload = () => {
 
     ar_model = ar_models[0];
 
-    position = {
-        name: 'Voicesage',
-        location: { lat: 53.300399, lng: -6.176398 }
-    };
-
     getPosition();
 
     $('.model-selector').select2();
@@ -84,6 +79,8 @@ function setPosition(location) {
     position.name = "Current Position";
     position.location.lat = location.coords.latitude;
     position.location.lng = location.coords.longitude;
+
+    createModel(ar_model, position);
 }
 
 
@@ -112,7 +109,7 @@ var ar_models = [
     {
         code: 'dragonite',
         url: './assets/dragonite/scene.gltf',
-        scale: '0.1 0.1 0.1',
+        scale: '0.5 0.5 0.5',
         rotation: '0 180 0',
         info: 'Dragonite'
     },
