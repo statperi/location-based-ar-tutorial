@@ -69,7 +69,7 @@ function getPosition() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(setPosition);
     } else {
-        // show error message 
+        alert("Sorry, your browser does not support HTML5 geolocation.");
         // x.innerHTML = "Geolocation is not supported by this browser.";
     }
 }
