@@ -19,6 +19,7 @@ window.onload = () => {
         var data = e.params.data;
         ar_model = ar_models.find(function (m) { return m.code == data.id });
 
+        clearModels();
         createModel(ar_model, position);
     });
 };
