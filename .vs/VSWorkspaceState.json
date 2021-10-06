@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\assets"
+    "\\assets",
+    "\\assets\\dragonite",
+    "\\assets\\dragonite\\textures"
   ],
-  "SelectedNode": "\\locationAR.js",
+  "SelectedNode": "\\assets\\dragonite",
   "PreviewInSolutionExplorer": false
 }

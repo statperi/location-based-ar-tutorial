@@ -76,9 +76,13 @@ function getPosition() {
 
 
 function setPosition(location) {
-    position.name = "Current Position";
-    position.location.lat = location.coords.latitude;
-    position.location.lng = location.coords.longitude;
+    position = {
+        name: "Current Position",
+        location: {
+            lat: location.coords.latitude,
+            lng: location.coords.longitude
+        }
+    };
 
     createModel(ar_model, position);
 }
