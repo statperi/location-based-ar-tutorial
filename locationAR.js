@@ -84,6 +84,8 @@ function setPosition(location) {
         }
     };
 
+    alert("your position is " + location.coords.latitude + "and " + location.coords.longitude);
+
     createModel(ar_model, position);
 }
 
