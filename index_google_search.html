@@ -13,8 +13,10 @@
     <script>
         THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
     </script>
-    <script src="./locationAR_working.js"></script>
+    <script src="./locationAR_google_search.js"></script>
     <link rel="stylesheet" type="text/css" href="./style.css" />
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-vV3M2Lw1xf6YPPnEFB4dVFdUHFikwjM&libraries=places"></script>
 </head>
 
 <body style='margin: 0; overflow: hidden;'>
@@ -29,17 +31,6 @@
                     displayHeight: 960;
                     videoTexture: true;
                     debugUIEnabled: false;'>
-
-        <!--<a-text value="Poolbeg Powerstation"
-                look-at="[gps-camera]"
-                scale="50 50 50"
-                gps-entity-place="latitude: 53.3402763; longitude: -6.189487;"></a-text>-->
-
-        <!--<a-text value="VoiceSage"
-                look-at="[gps-camera]"
-                scale="10 10 10"
-                gps-entity-place="latitude: 53.300399; longitude: -6.176398;"></a-text>-->
-
         <a-text value="Bear coffee"
                 scale="10 10 10"
                 gps-entity-place="latitude: 53.301403; longitude: -6.177578;"></a-text>
@@ -48,8 +39,15 @@
                   arjs-look-controls='smoothingFactor: 0.1'
                   rotation-reader></a-camera>
     </a-scene>
+
     <div class="centered">
         <button class="swap" data-action="change"></button>
+    </div>
+    <div class="centered">
+        <input class="searchtext" placeholder="Type the location to add a bird" />
+        <button data-action="search"
+                style="border-radius: 12px; font-size: 12px;"> Search
+        </button>
     </div>
 </body>
 </html>
