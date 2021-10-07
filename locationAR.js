@@ -75,8 +75,8 @@ function getLocations(currentLocation) {
 
     $.ajax({
         url: 'https://4ov2cmmwri.execute-api.eu-west-1.amazonaws.com/Prod/api/coordinates',
-        headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
-        crossDomain: true,
+        //headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+        //crossDomain: true,
         type: 'POST',
         dataType: 'json',
         data: currentLocation,
