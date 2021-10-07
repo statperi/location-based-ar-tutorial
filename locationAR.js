@@ -1,12 +1,6 @@
-﻿var position;
-var ar_model;
-
-window.onload = () => {
-    ar_model = ar_models[0];
-
+﻿window.onload = () => {
     getCurrentLocation();
 };
-
 
 var ar_models = [{
     code: 'articuno',
@@ -24,37 +18,56 @@ var ar_models = [{
 ];
 
 
-var setModel = function (model, entity) {
-    var element = $(entity);
-
-    if (model.scale) element.attr('scale', model.scale);
-    if (model.rotation) element.attr('rotation', model.rotation);
-    if (model.position) element.attr('position', model.position);
-    
-    element.attr('gltf-model', model.url);
-    element.attr('animation-mixer', '');
-};
-
-
 function getCurrentLocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(setPosition);
+        navigator.geolocation.getCurrentPosition(getCoordinates);
     } else {
         alert("Sorry, your browser does not support HTML5 geolocation.");
     }
 }
 
-function setPosition(location) {
-    position = {
-        name: "Current Position",
-        location: {
-            lat: location.coords.latitude,
-            lng: location.coords.longitude
-        }
-    };
 
-    getLocations({ latitude: location.coords.latitude, longitude: location.coords.longitude });
-    // createModel(ar_model, position);
+function getCoordinates(location) {
+    processGetCoordinates({
+        latitude: location.coords.latitude,
+        longitude: location.coords.longitude
+    });
+}
+
+
+function processGetCoordinates(currentLocation) {
+    $.ajax({
+        url: 'https://4ov2cmmwri.execute-api.eu-west-1.amazonaws.com/Prod/api/coordinates',
+        headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+        crossDomain: true,
+        type: 'POST',
+        dataType: 'json',
+        data: currentLocation,
+        success: function (response) {
+            console.log(response);
+
+            if (response.status == 200)
+                getCoordinatesSuccess(response);
+        },
+        error: function (err) {
+            console.log(err);
+            alert("Could not get target locations");
+        }
+    });
+}
+
+
+var modelIndex = 0;
+function getCoordinatesSuccess(response) {
+    for (var i = 0; i < response.data.length; i++) {
+        modelIndex++;
+
+        let position = response.data[i];
+        let newIndex = modelIndex % ar_models.length;
+        let ar_model = ar_models[newIndex];
+
+        createModel(ar_model, position);
+    }
 }
 
 
@@ -68,32 +81,13 @@ function createModel(model, place) {
     scene.appendChild(entity);
 }
 
+function setModel(model, entity) {
+    var element = $(entity);
 
+    if (model.scale) element.attr('scale', model.scale);
+    if (model.rotation) element.attr('rotation', model.rotation);
+    if (model.position) element.attr('position', model.position);
 
-
-function getLocations(currentLocation) {
-
-    $.ajax({
-        url: 'https://4ov2cmmwri.execute-api.eu-west-1.amazonaws.com/Prod/api/coordinates',
-        headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
-        crossDomain: true,
-        type: 'POST',
-        dataType: 'json',
-        data: currentLocation,
-        success: function (data) {
-            console.log(data);
-            getLocationSuccess(data);
-        },
-        error: function (err) {
-            console.log(err);
-            alert("Could not get target locations");
-        }
-    });
-}
-
-
-function getLocationSuccess(response) {
-    if (response.status == 200) {
-        console.log(response);
-    }
-}
+    element.attr('gltf-model', model.url);
+    element.attr('animation-mixer', '');
+};

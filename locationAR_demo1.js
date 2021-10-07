@@ -43,14 +43,14 @@ var setModel = function (model, entity) {
 
 function getCurrentLocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(setPosition);
+        navigator.geolocation.getCurrentPosition(getCoordinates);
     } else {
         alert("Sorry, your browser does not support HTML5 geolocation.");
     }
 }
 
 
-function setPosition(location) {
+function getCoordinates(location) {
     position = {
         name: "Current Position",
         location: {
