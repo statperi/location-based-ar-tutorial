@@ -53,7 +53,7 @@ function setPosition(location) {
         }
     };
 
-    getLocations(position.location);
+    getLocations(new { latitude: location.coords.latitude, longitude: location.coords.longitude });
     // createModel(ar_model, position);
 }
 
