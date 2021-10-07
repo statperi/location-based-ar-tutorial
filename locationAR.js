@@ -48,6 +48,29 @@ var setModel = function (model, entity) {
     modelName = name.innerText = model.info;
 };
 
+
+function getPosition() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(setPosition);
+    } else {
+        alert("Sorry, your browser does not support HTML5 geolocation.");
+    }
+}
+
+
+function setPosition(location) {
+    position = {
+        name: "Current Position",
+        location: {
+            lat: location.coords.latitude,
+            lng: location.coords.longitude
+        }
+    };
+
+    createModel(ar_model, position);
+}
+
+
 function createModel(model, place) {
     let scene = document.querySelector('a-scene');
     let entity = document.createElement('a-entity');
@@ -62,31 +85,6 @@ function createModel(model, place) {
 function clearModels() {
     var entities = $('a-entity[gps-entity-place]');
     entities.remove();
-}
-
-
-function getPosition() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(setPosition);
-    } else {
-        alert("Sorry, your browser does not support HTML5 geolocation.");
-        // x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-}
-
-
-function setPosition(location) {
-    position = {
-        name: "Current Position",
-        location: {
-            lat: location.coords.latitude,
-            lng: location.coords.longitude
-        }
-    };
-
-    alert("your position is " + location.coords.latitude + "and " + location.coords.longitude);
-
-    createModel(ar_model, position);
 }
 
 
@@ -120,7 +118,6 @@ var ar_models = [
         info: 'Dragonite'
     },
 ];
-
 
 
 //function staticLoadPlaces() {
