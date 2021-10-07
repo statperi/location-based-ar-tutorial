@@ -42,7 +42,7 @@ function processGetCoordinates(currentLocation) {
         crossDomain: true,
         type: 'POST',
         dataType: 'json',
-        data: currentLocation,
+        data: { location : currentLocation },
         success: function (response) {
             console.log(response);
 
