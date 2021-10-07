@@ -103,20 +103,20 @@ var ar_models = [
         rotation: '0 180 0',
         info: 'Bird'
     },
-    {
-        code: 'bear',
-        url: './assets/bear/scene.gltf',
-        scale: '0.1 0.1 0.1',
-        rotation: '0 180 0',
-        info: 'Bear'
-    },
-    {
-        code: 'dragonite',
-        url: './assets/dragonite/scene.gltf',
-        scale: '0.5 0.5 0.5',
-        rotation: '0 180 0',
-        info: 'Dragonite'
-    },
+    //{
+    //    code: 'bear',
+    //    url: './assets/bear/scene.gltf',
+    //    scale: '0.1 0.1 0.1',
+    //    rotation: '0 180 0',
+    //    info: 'Bear'
+    //},
+    //{
+    //    code: 'dragonite',
+    //    url: './assets/dragonite/scene.gltf',
+    //    scale: '0.5 0.5 0.5',
+    //    rotation: '0 180 0',
+    //    info: 'Dragonite'
+    //},
 ];
 
 
