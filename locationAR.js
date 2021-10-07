@@ -53,6 +53,7 @@ function setPosition(location) {
         }
     };
 
+    getLocations(position.location);
     // createModel(ar_model, position);
 }
 
