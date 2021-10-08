@@ -47,7 +47,7 @@ function processGetCoordinates(currentLocation) {
         headers: {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': '*'
+            'Access-Control-Allow-Methods': 'GET,POST,OPTIONS'
         },
         crossDomain: true,
         type: 'POST',
