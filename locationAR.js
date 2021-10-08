@@ -20,34 +20,41 @@ var ar_models = [{
 
 function getCurrentLocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(getCoordinates);
+        navigator.geolocation.getCurrentPosition(processGetCoordinates);
     } else {
         alert("Sorry, your browser does not support HTML5 geolocation.");
     }
 }
 
 
-function getCoordinates(location) {
-    processGetCoordinates({
-        latitude: location.coords.latitude,
-        longitude: location.coords.longitude
-    });
-}
+//function getCoordinates(location) {
+//    processGetCoordinates({
+//        latitude: location.coords.latitude,
+//        longitude: location.coords.longitude
+//    });
+//}
 
 
 function processGetCoordinates(currentLocation) {
+
+    var data = {
+        latitude: currentLocation.coords.latitude,
+        longitude: currentLocation.coords.longitude
+    };
+
     $.ajax({
         url: 'https://4ov2cmmwri.execute-api.eu-west-1.amazonaws.com/Prod/api/coordinates',
         headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
         crossDomain: true,
         type: 'POST',
         dataType: 'json',
-        data: { location : currentLocation },
+        data: data,
         success: function (response) {
             console.log(response);
 
-            if (response.status == 200)
+            if (response.status == 200) {
                 getCoordinatesSuccess(response);
+            }
         },
         error: function (err) {
             console.log(err);
@@ -74,12 +81,13 @@ function getCoordinatesSuccess(response) {
 function createModel(model, place) {
     let scene = document.querySelector('a-scene');
     let entity = document.createElement('a-entity');
-    entity.setAttribute('gps-entity-place', `latitude: ${place.location.lat}; longitude: ${place.location.lng};`);
+    entity.setAttribute('gps-entity-place', `latitude: ${place.location.latitude}; longitude: ${place.location.longitude};`);
 
     setModel(model, entity);
 
     scene.appendChild(entity);
 }
+
 
 function setModel(model, entity) {
     let element = $(entity);
