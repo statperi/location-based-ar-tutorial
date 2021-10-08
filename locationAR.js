@@ -54,11 +54,7 @@ function processGetCoordinates(currentLocation) {
         dataType: 'json',
         data: data,
         success: function (response) {
-            console.log(response);
-
-            if (response.status == 200) {
-                getCoordinatesSuccess(response);
-            }
+            getCoordinatesSuccess(response);
         },
         error: function (err) {
             console.log(err);
@@ -70,10 +66,10 @@ function processGetCoordinates(currentLocation) {
 
 var modelIndex = 0;
 function getCoordinatesSuccess(response) {
-    for (var i = 0; i < response.data.length; i++) {
+    for (var i = 0; i < response.length; i++) {
         modelIndex++;
 
-        let position = response.data[i];
+        let position = response[i];
         let newIndex = modelIndex % ar_models.length;
         let ar_model = ar_models[newIndex];
 
