@@ -27,14 +27,6 @@ function getCurrentLocation() {
 }
 
 
-//function getCoordinates(location) {
-//    processGetCoordinates({
-//        latitude: location.coords.latitude,
-//        longitude: location.coords.longitude
-//    });
-//}
-
-
 function processGetCoordinates(currentLocation) {
 
     var data = {
@@ -52,12 +44,9 @@ function processGetCoordinates(currentLocation) {
         crossDomain: true,
         type: 'POST',
         dataType: 'json',
-        data: data,
-        success: function (response) {
-            getCoordinatesSuccess(response);
-        },
+        data: JSON.stringify(data),
+        success: getCoordinatesSuccess,
         error: function (err) {
-            console.log(err);
             alert("Could not get target locations");
         }
     });
@@ -78,10 +67,10 @@ function getCoordinatesSuccess(response) {
 }
 
 
-function createModel(model, place) {
+function createModel(model, location) {
     let scene = document.querySelector('a-scene');
     let entity = document.createElement('a-entity');
-    entity.setAttribute('gps-entity-place', `latitude: ${place.latitude}; longitude: ${place.longitude};`);
+    entity.setAttribute('gps-entity-place', `latitude: ${location.latitude}; longitude: ${location.longitude};`);
 
     setModel(model, entity);
 
