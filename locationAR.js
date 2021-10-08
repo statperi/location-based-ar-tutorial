@@ -3,18 +3,18 @@
 };
 
 var ar_models = [{
-    code: 'articuno',
-    url: './assets/articuno/scene.gltf',
-    scale: '0.1 0.1 0.1',
-    rotation: '0 180 0',
-    info: 'Articuno'
-}, {
-    code: 'bird',
-    url: './assets/phoenix_bird/scene.gltf',
-    scale: '0.1 0.1 0.1',
-    rotation: '0 180 0',
-    info: 'Bird'
-}
+        code: 'articuno',
+        url: './assets/articuno/scene.gltf',
+        scale: '0.1 0.1 0.1',
+        rotation: '0 180 0',
+        info: 'Articuno'
+    }, {
+        code: 'bird',
+        url: './assets/phoenix_bird/scene.gltf',
+        scale: '0.1 0.1 0.1',
+        rotation: '0 180 0',
+        info: 'Bird'
+    }
 ];
 
 
@@ -37,7 +37,7 @@ function getCoordinates(location) {
 
 function processGetCoordinates(currentLocation) {
     $.ajax({
-        url: 'https://4ov2cmmwri.execute-api.eu-west-1.amazonaws.com/Prod/api/coordinates',
+        url: 'http://4ov2cmmwri.execute-api.eu-west-1.amazonaws.com/Prod/api/coordinates',
         headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
         crossDomain: true,
         type: 'POST',
@@ -82,7 +82,7 @@ function createModel(model, place) {
 }
 
 function setModel(model, entity) {
-    var element = $(entity);
+    let element = $(entity);
 
     if (model.scale) element.attr('scale', model.scale);
     if (model.rotation) element.attr('rotation', model.rotation);
