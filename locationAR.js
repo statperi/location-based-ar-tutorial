@@ -81,7 +81,7 @@ function getCoordinatesSuccess(response) {
 function createModel(model, place) {
     let scene = document.querySelector('a-scene');
     let entity = document.createElement('a-entity');
-    entity.setAttribute('gps-entity-place', `latitude: ${place.location.latitude}; longitude: ${place.location.longitude};`);
+    entity.setAttribute('gps-entity-place', `latitude: ${place.latitude}; longitude: ${place.longitude};`);
 
     setModel(model, entity);
 
