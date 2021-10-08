@@ -37,7 +37,7 @@ function getCoordinates(location) {
 
 function processGetCoordinates(currentLocation) {
     $.ajax({
-        url: 'http://4ov2cmmwri.execute-api.eu-west-1.amazonaws.com/Prod/api/coordinates',
+        url: 'https://4ov2cmmwri.execute-api.eu-west-1.amazonaws.com/Prod/api/coordinates',
         headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
         crossDomain: true,
         type: 'POST',
