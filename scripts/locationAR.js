@@ -8,7 +8,8 @@ window.onload = () => {
         longitude: -6.1777447
     };
 
-    createEntity(bear, true);
+    // createEntity(bear, true);
+    createEntity(bear);
 };
 
 var Pointer = () => {
