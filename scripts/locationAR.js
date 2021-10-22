@@ -34,18 +34,18 @@ var Pointer = () => {
 var Bear = () => {
     return {
         code: 'bear',
-        url: './assets/bear/scene.gltf',
+        url: './assets/bear_male/scene.gltf',
         scale: '1 1 1',
         rotation: '0 0 0',
         // position: '0 30 0',
         // lookAt: '[camera]',
         gestureConfig: 'minScale: 0.25; maxScale: 10',
-        info: 'Pin',
+        info: 'Bear Market',
         text: {
             scale: '40 40 40',
             lookAt: '[camera]',
             gestureConfig: 'minScale: 0.25; maxScale: 10',
-            text: 'Bear'
+            text: 'Bear Market'
         }
     }
 }
