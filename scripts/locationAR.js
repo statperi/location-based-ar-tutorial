@@ -36,7 +36,7 @@ var Bear = () => {
     return {
         code: 'bear',
         url: './assets/bear_male/scene.gltf',
-        scale: '0.10 0.10 0.10',
+        scale: '0.05 0.05 0.05',
         rotation: '0 0 0',
         // position: '0 30 0',
         // lookAt: '[camera]',
