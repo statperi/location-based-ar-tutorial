@@ -36,16 +36,16 @@ var Bear = () => {
     return {
         code: 'bear',
         url: './assets/bear_male/scene.gltf',
-        scale: '0.25 0.25 0.25',
+        scale: '0.10 0.10 0.10',
         rotation: '0 0 0',
         // position: '0 30 0',
         // lookAt: '[camera]',
-        gestureConfig: 'minScale: 0.25; maxScale: 10',
+        gestureConfig: 'minScale: 0.01; maxScale: 5',
         info: 'Bear Market',
         text: {
             scale: '5 5 5',
             lookAt: '[camera]',
-            gestureConfig: 'minScale: 0.25; maxScale: 10',
+            gestureConfig: 'minScale: 0.01; maxScale: 5',
             text: 'Bear Market'
         }
     }
