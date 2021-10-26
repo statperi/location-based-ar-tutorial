@@ -19,7 +19,7 @@ window.onload = () => {
     };
 
     star.ground = true;
-    star.scale = '0.02 0.02 0.02';
+    // star.scale = '0.02 0.02 0.02';
 
     createEntity(star);
 };
