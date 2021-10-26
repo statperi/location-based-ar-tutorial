@@ -12,15 +12,14 @@ window.onload = () => {
     //createEntity(bear);
 
     ////////////////////////////////////////////////////
-    let bear2 = Bear();
-    bear2.location = bear2.text.location = {
-        latitude: 53.3005386,
-        longitude: -6.1783418
+    let star = Star();
+    star.location = {
+        latitude: 53.300399,
+        longitude: -6.176398
     };
 
-    bear2.text = null;
-    bear2.ground = true;
-    bear2.scale = '0.02 0.02 0.02';
+    star.ground = true;
+    star.scale = '0.02 0.02 0.02';
 
     createEntity(bear2);
 };
