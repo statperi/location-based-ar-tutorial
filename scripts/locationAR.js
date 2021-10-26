@@ -21,7 +21,7 @@ window.onload = () => {
     star.ground = true;
     star.scale = '0.02 0.02 0.02';
 
-    createEntity(bear2);
+    createEntity(star);
 };
 
 var Pointer = () => {
