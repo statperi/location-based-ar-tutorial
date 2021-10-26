@@ -2,14 +2,14 @@ window.onload = () => {
     // getCurrentLocation();
 
     ////////////////////////////////////////////////////
-    let bear = Bear();
-    bear.location = bear.text.location = {
-        latitude: 53.3014227,
-        longitude: -6.1777447
-    };
+    //let bear = Bear();
+    //bear.location = bear.text.location = {
+    //    latitude: 53.3014227,
+    //    longitude: -6.1777447
+    //};
 
-    // createEntity(bear, true);
-    createEntity(bear);
+    //// createEntity(bear, true);
+    //createEntity(bear);
 
     ////////////////////////////////////////////////////
     let bear2 = Bear();
@@ -18,13 +18,11 @@ window.onload = () => {
         longitude: -6.1783418
     };
 
-    bear2.scale = '0.01 0.01 0.01';
+    bear2.text = null;
+    bear2.ground = true;
+    bear2.scale = '0.02 0.02 0.02';
 
-    // createEntity(bear, true);
     createEntity(bear2);
-
-
-
 };
 
 var Pointer = () => {
@@ -159,6 +157,11 @@ function createEntity(model, autoscale) {
     let entityEl = createEntityElement(model);
     scene.appendChild(entityEl);
 
+    if (model.ground) {
+        let planeEl = createPlaneElement();
+        scene.appendChild(planeEl);
+    }
+
     if (model.text) {
         let textEl = createTextElement(model.text);
         scene.appendChild(textEl);
@@ -241,6 +244,17 @@ function createEntityElement(config) {
         element.classList.add('clickable');
     }
 
+    return element;
+}
+
+function createPlaneElement() {
+    let element = document.createElement('a-plane');
+    element.setAttribute('position', '0 0 0');
+    element.setAttribute('rotation', '-90 0 0');
+    element.setAttribute('width', '50');
+    element.setAttribute('height', '50');
+    element.setAttribute('material', 'shader: shadow');
+    element.setAttribute('shadow', '');
     return element;
 }
 
