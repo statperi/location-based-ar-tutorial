@@ -13,7 +13,7 @@ window.onload = () => {
 
     ////////////////////////////////////////////////////
     let bear2 = Bear();
-    bear2.location = bear.text.location = {
+    bear2.location = bear2.text.location = {
         latitude: 53.3005386,
         longitude: -6.1783418
     };
