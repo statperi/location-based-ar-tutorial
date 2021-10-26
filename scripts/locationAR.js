@@ -1,7 +1,7 @@
 window.onload = () => {
     // getCurrentLocation();
 
-
+    ////////////////////////////////////////////////////
     let bear = Bear();
     bear.location = bear.text.location = {
         latitude: 53.3014227,
@@ -10,6 +10,21 @@ window.onload = () => {
 
     // createEntity(bear, true);
     createEntity(bear);
+
+    ////////////////////////////////////////////////////
+    let bear2 = Bear();
+    bear2.location = bear.text.location = {
+        latitude: 53.3005386,
+        longitude: -6.1783418
+    };
+
+    bear2.scale = '0.01 0.01 0.01';
+
+    // createEntity(bear, true);
+    createEntity(bear2);
+
+
+
 };
 
 var Pointer = () => {
