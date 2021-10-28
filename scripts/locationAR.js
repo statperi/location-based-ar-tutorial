@@ -46,7 +46,7 @@ var Bear = () => {
             gestureConfig: 'minScale: 0.01; maxScale: 5',
             text: 'Bear Market'
         },
-        ground: true
+        ground: false
     }
 }
 
@@ -150,7 +150,8 @@ function createEntity(model, autoscale) {
 
     if (model.text) {
         let textEl = createTextElement(model.text);
-        scene.appendChild(textEl);
+        // scene.appendChild(textEl);
+        entityEl.appendChild(textEl);
         refresh(entityEl, textEl, autoscale);
     }
 }
