@@ -1,27 +1,13 @@
 window.onload = () => {
     // getCurrentLocation();
 
-    ////////////////////////////////////////////////////
-    //let bear = Bear();
-    //bear.location = bear.text.location = {
-    //    latitude: 53.3014227,
-    //    longitude: -6.1777447
-    //};
-
-    //// createEntity(bear, true);
-    //createEntity(bear);
-
-    ////////////////////////////////////////////////////
-    let star = Star();
-    star.location = {
-        latitude: 53.300399,
-        longitude: -6.176398
+    let bear = Bear();
+    bear.location = bear.text.location = {
+        latitude: 53.3014227,
+        longitude: -6.1777447
     };
 
-    star.ground = true;
-    // star.scale = '0.02 0.02 0.02';
-
-    createEntity(star);
+    createEntity(bear);
 };
 
 var Pointer = () => {
@@ -59,7 +45,8 @@ var Bear = () => {
             lookAt: '[camera]',
             gestureConfig: 'minScale: 0.01; maxScale: 5',
             text: 'Bear Market'
-        }
+        },
+        ground: true
     }
 }
 

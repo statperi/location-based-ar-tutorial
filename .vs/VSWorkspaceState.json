@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
+    "\\assets",
+    "\\assets\\bear_male",
+    "\\assets\\bear_male\\textures",
     "\\scripts"
   ],
-  "SelectedNode": "\\scripts\\locationAR.js",
+  "SelectedNode": "\\assets",
   "PreviewInSolutionExplorer": false
 }
