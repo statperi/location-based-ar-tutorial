@@ -41,7 +41,7 @@ var Bear = () => {
         gestureConfig: 'minScale: 0.01; maxScale: 5',
         info: 'Bear Market',
         text: {
-            scale: '5 5 5',
+            scale: '100 100 100',
             lookAt: '[camera]',
             gestureConfig: 'minScale: 0.01; maxScale: 5',
             text: 'Bear Market'
