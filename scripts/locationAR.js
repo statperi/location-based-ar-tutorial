@@ -46,7 +46,9 @@ var Bear = () => {
             gestureConfig: 'minScale: 0.01; maxScale: 5',
             text: 'Bear Market'
         },
-        ground: false
+        ground: false,
+        animation: 'clip: Arm_Bear | Idle_2; loop: repeat;',
+        successAnimation: ''
     }
 }
 
@@ -185,12 +187,23 @@ function refresh(entity, text, autoscale) {
 
 
 function showSuccess(entity, text) {
-    let star = Star();
-    entity.setAttribute('scale', star.scale);
-    entity.setAttribute('gltf-model', star.url);
-    entity.setAttribute('info', star.info);
-    entity.removeAttribute('gesture-handler');
+    //let star = Star();
+    //entity.setAttribute('scale', star.scale);
+    //entity.setAttribute('gltf-model', star.url);
+    //entity.setAttribute('info', star.info);
+    //entity.removeAttribute('gesture-handler');
 
+    animate(entity, 'clip: Arm_Bear | Lie; loop: once; duration:2')
+
+    let exit = false;
+    setTimeout(() => {
+        if (exit) return;
+
+        animate(entity, 'clip: Arm_Bear | Sleep; loop: once;')
+        exit = true;
+    }, 1000);
+
+    
     text.remove();
 }
 
@@ -212,6 +225,10 @@ function calculateScale(distance) {
     return scale;
 }
 
+function animate(element, animation) {
+    element.setAttribute('animation-mixer', animation);
+}
+
 function createEntityElement(config) {
     let element = document.createElement('a-entity');
     element.setAttribute('scale', config.scale);
@@ -219,7 +236,7 @@ function createEntityElement(config) {
     element.setAttribute('position', config.position);
     element.setAttribute('gltf-model', config.url);
     element.setAttribute('info', config.info);
-    element.setAttribute('animation-mixer', '');
+    element.setAttribute('animation-mixer', config.animation ? config.animation : '');
     element.setAttribute('success', 'false');
     element.setAttribute('gps-entity-place', `latitude: ${config.location.latitude}; longitude: ${config.location.longitude};`);
 
