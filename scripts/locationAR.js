@@ -47,7 +47,7 @@ var Bear = () => {
             text: 'Bear Market'
         },
         ground: false,
-        animation: 'clip: Arm_Bear | Idle_2; loop: repeat;',
+        animation: 'clip: Arm_Bear|Idle_2; loop: repeat;',
         successAnimation: ''
     }
 }
@@ -193,13 +193,13 @@ function showSuccess(entity, text) {
     //entity.setAttribute('info', star.info);
     //entity.removeAttribute('gesture-handler');
 
-    animate(entity, 'clip: Arm_Bear | Lie; loop: once; duration:2')
+    animate(entity, 'clip: Arm_Bear|Lie; loop: once; duration:2')
 
     let exit = false;
     setTimeout(() => {
         if (exit) return;
 
-        animate(entity, 'clip: Arm_Bear | Sleep; loop: once;')
+        animate(entity, 'clip: Arm_Bear|Sleep; loop: once;')
         exit = true;
     }, 1000);
 
