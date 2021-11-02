@@ -8,6 +8,15 @@ window.onload = () => {
     };
 
     createEntity(bear);
+
+
+    let bear = Bear();
+    bear.location = bear.text.location = {
+        latitude: 53.2895683,
+        longitude: -6.2065826
+    };
+
+    createEntity(bear);
 };
 
 var Pointer = () => {
@@ -196,12 +205,17 @@ function showSuccess(entity, text) {
     animate(entity, 'clip: Arm_Bear|Lie; loop: once; duration:2')
 
     let exit = false;
+    let entered = false;
     setTimeout(() => {
         if (exit) return;
 
-        animate(entity, 'clip: Arm_Bear|Sleep; loop: once;')
-        exit = true;
-    }, 1000);
+        if (entered) {
+            animate(entity, 'clip: Arm_Bear|Sleep; loop: once; clampWhenFinished:true;')
+            exit = true;
+        }
+
+        entered = true;
+    }, 2000);
 
     
     text.remove();
