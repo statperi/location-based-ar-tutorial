@@ -241,6 +241,7 @@ function calculateScale(distance) {
 
 function animate(element, animation) {
     element.setAttribute('animation-mixer', animation);
+    element.removeAttribute('animation-mixer');
 }
 
 function createEntityElement(config) {
