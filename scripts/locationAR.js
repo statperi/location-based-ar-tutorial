@@ -207,7 +207,10 @@ function showSuccess(entity, text) {
     let exit = false;
     let entered = false;
     setTimeout(() => {
-        if (exit) return;
+        if (exit) {
+            entity.removeAttribute('animation-mixer');
+            return;
+        }
 
         if (entered) {
             animate(entity, 'clip: Arm_Bear|Sleep; loop: once; clampWhenFinished:true;')
@@ -241,7 +244,6 @@ function calculateScale(distance) {
 
 function animate(element, animation) {
     element.setAttribute('animation-mixer', animation);
-    element.removeAttribute('animation-mixer');
 }
 
 function createEntityElement(config) {
