@@ -10,13 +10,13 @@ window.onload = () => {
     createEntity(bear);
 
 
-    let bear = Bear();
-    bear.location = bear.text.location = {
+    let bear2 = Bear();
+    bear2.location = bear2.text.location = {
         latitude: 53.2895683,
         longitude: -6.2065826
     };
 
-    createEntity(bear);
+    createEntity(bear2);
 };
 
 var Pointer = () => {
