@@ -213,7 +213,7 @@ function showSuccess(entity, text) {
         }
 
         if (entered) {
-            animate(entity, 'clip: Arm_Bear|Sleep; loop: once; clampWhenFinished:true;')
+            animate(entity, 'clip: Arm_Bear|Sleep; loop: once;')
             exit = true;
         }
 
