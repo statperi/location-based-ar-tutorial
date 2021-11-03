@@ -196,13 +196,8 @@ function refresh(entity, text, autoscale) {
 
 
 function showSuccess(entity, text) {
-    //let star = Star();
-    //entity.setAttribute('scale', star.scale);
-    //entity.setAttribute('gltf-model', star.url);
-    //entity.setAttribute('info', star.info);
-    //entity.removeAttribute('gesture-handler');
 
-    animate(entity, 'clip: Arm_Bear|Lie; loop: once; duration:2')
+    animate(entity, 'clip: Arm_Bear|Lie; loop: once; duration:2; clampWhenFinished: true;')
 
     let exit = false;
     let entered = false;
@@ -213,7 +208,7 @@ function showSuccess(entity, text) {
         }
 
         if (entered) {
-            animate(entity, 'clip: Arm_Bear|Sleep; loop: once;')
+            animate(entity, 'clip: Arm_Bear|Sleep; loop: once; clampWhenFinished: true;')
             exit = true;
         }
 
